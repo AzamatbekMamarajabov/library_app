@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Yangilikni O'chirish
+{% endblock %}
+
+
+
+
+{% block content %}
+
+<form method="post">{% csrf_token %}
+    <p>{{ books }}  |   O'chirmoqchimisiz? ?</p>
+    <input class="btn btn-danger" type="submit" value="Ha O'chir">
+    <a class="btn btn-dark" href="{%url 'books_list'%}">bekor qilish</a>
+</form>
+
+
+
+
+{% endblock %}

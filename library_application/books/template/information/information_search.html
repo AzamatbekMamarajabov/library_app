@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block title %} Yangilik {% endblock %} {% block content %}
+
+<h1>{{book.name}}</h1>
+<div class='row'>
+    <form action="" method="POST" class="form-inline ">
+        {% csrf_token %} {{ form }}
+        <input type="submit" class="btn btn-success" value="Search">
+    </form>
+</div>
+
+<div class="col-lg-12">
+
+    <ul class="list-group">
+        {% for element in names %}
+        <li class="list-group-item"> <a href="{% url 'information_detail' element.pk %}">{{ element }}</a></li>
+        {% endfor %}
+    </ul>
+    <br>
+
+</div>
+{% endblock %}

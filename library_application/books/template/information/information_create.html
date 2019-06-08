@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Yangilik Qo'shish
+{% endblock %}
+
+
+
+
+{% block content %}
+
+<h3>{{book_id}}</h3>
+<div class='row card'>
+    
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save">
+    </form>
+</div>
+
+   
+
+{% endblock %}
